@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" href="main-style.css">
+    <link rel="stylesheet" href="custom-style.css">
+</head>
+<body>
+    
+    <!-- for Search -->
+    <div class="container">
+        <div class="jumbotron">
+            <form class="justify-content-center form-inline my-2 my-lg-0"  action="" id="searchForm">
+              <input class="form-control text-center mr-sm-2" type="text" id="location" placeholder="Enter your Location...">
+              <button class="btn btn-success my-2 my-sm-0" type="button" id="searchBtn">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="container" id="contentContainer">
+        <div class="error">
+            <h1 class="text-center" id="errorMessage"></h1>
+        </div>
+        <div id="weather" class="row">
+            <div class="col">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple71/v4/56/6c/10/566c1052-e56e-79b7-107c-4e97fa2f94a6/source/512x512bb.jpg" alt="image-placeholder" class="img" id="setImg">
+            </div>
+            <div class="col">
+                <ul>
+                    <li class="location text-center" id="getlocation">
+                       <h1>Howrah</h1>
+                    </li>
+                    <li class="main text-center">
+                       <h4>haze</h4></li>
+                </ul>
+                <div class="desc text-center">Today: Haze currntly. The high will be 24C and low will be 28C.</div>
+                <div class="row data-table">
+                    <div class="col text-center details">
+                        <ul>
+                            <li>&nbsp;</li>
+                            <li>Humidity</li>
+                            <li>Pressure</li>
+                            <li>Min Temp</li>
+                            <li>Max Temp</li>
+                            <li>Wind Speed</li>
+                        </ul>
+                    </div>
+                    <div class="col text-center data">
+                        <ul>
+                            <li>&nbsp;</li>
+                            <li>1016 pa</li>
+                            <li>53%</li>
+                            <li>24</li>
+                            <li>24</li>
+                            <li>2.6 m/s</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <!-- JQUERY -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- AXIOS -->
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- MAIN SCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
