@@ -6,6 +6,8 @@ $(document).ready(function () {
   var showTemp = $('#showTemp');          // WILL SHOW EXACT TEMP
   var shortNews = $('#shortNews');        // WILL SHOW THE SHORT REPORT SUMMARY
   var dataTable = $('#dataTable');        // DATA TABLE WITH DETAILED INFO
+  var content = $('#contentContainer');
+  var loader = $("#loader");
 
   // TEMPORARILY HIDING HTML DATA
 
@@ -16,9 +18,13 @@ $(document).ready(function () {
     shortNews.html('');
     dataTable.hide();
     $('#errorMessage').hide();
+    content.hide();
+    loader.hide();
    }
 
   clearScreen();
+
+
 
   $('#location').keypress(function (e) {
     var key = e.which;
@@ -40,13 +46,19 @@ $(document).ready(function () {
               searchLocation(term);
   });
 
+
+
   function searchLocation(currentLocation) {
     $('#errorMessage').html("");
+    loader.show();
     axios({
         method:'get',
         url:`http://api.openweathermap.org/data/2.5/weather?q=${currentLocation}&appid=9fbc7ccff6470a8201aaac9d32862582&units=metric`
-    }).then(function(response) {
-      
+
+      }).then(function(response) {
+      loader.hide();
+      content.show();
+
       var weatherData = response.data; 
 
       getlocation.html(`${weatherData.name}`);
@@ -57,17 +69,15 @@ $(document).ready(function () {
       dataTable.html(`
       <div class="col text-center details">
         <ul id="detailTopics">
-            <li>&nbsp;</li>
             <li>Humidity</li>
             <li>Pressure</li>
             <li>Min Temp</li>
             <li>Max Temp</li>
-            <li>Wind Speed</li>
+            <li>Wind</li>
         </ul>
       </div>
       <div class="col text-center data">
         <ul id="detailData">
-            <li>&nbsp;</li>
             <li>${weatherData.main.pressure} pa</li>
             <li>${weatherData.main.humidity}%</li>
             <li>${weatherData.main.temp_min + String.fromCharCode(176)}C</li>
@@ -84,8 +94,10 @@ $(document).ready(function () {
        
       }).catch(function (error) {
         console.log(error);
+        content.show();
+        loader.hide();
         $('#errorMessage').show();
-        $('#errorMessage').html("Sorry, location Not Found! <br><i class=\"far fa-sad-tear\"></i>");
+        $('#errorMessage').html("Sorry, location Not Found! <br><i class='icon ion- md-sad'></i></i>");
       });
   }
 
