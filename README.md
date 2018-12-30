@@ -5,8 +5,8 @@ It mainly uses:-
   - CSS
   - JAVASCRIPT
   - JQUERY
-  - AXIOS CLIENT
-  - BOOTSWATCH (BootStrap theme)
+  - HTTP AXIOS CLIENT
+  - BOOTSWATCH (Bootstrap theme)
   - IONICONS
 ---
 # Screenshot:- 
