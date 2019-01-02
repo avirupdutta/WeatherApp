@@ -10,4 +10,4 @@ It mainly uses:-
   - IONICONS
 ---
 # Screenshot:- 
-![](Screenshots/Screenshot.png)
+![](Screenshots/ss1.png)
