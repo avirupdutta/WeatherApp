@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather App</title>
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous"> -->
-    <link href="https://unpkg.com/ionicons@4.5.0/dist/css/ionicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="custom-style.css">
 </head>
 <body>
@@ -16,8 +16,7 @@
     <div class="">
         <div class="jumbotron">
             <form class="justify-content-center form-inline my-2 my-lg-0"  action="" id="searchForm">
-              <input class="form-control text-center mr-sm-2" type="text" id="location" placeholder="Search..." autocomplete="off">
-              <!-- <button class="btn btn-success my-2 my-lg-0" type="button" id="searchBtn"><i class="icon ion-ios-search"></i></button> -->
+              <input class="form-control text-center mr-sm-2" type="text" id="location" placeholder="Search..." autocomplete autofocus>
             </form>
         </div>
     </div>
@@ -28,21 +27,31 @@
     <!-- Weather  Informations-->
     <div class="container" id="contentContainer">
         <div class="error">
-            <h3 class="text-center" id="errorMessage"></h3>
+            <h5 class="text-center display-4 " id="errorMessage"></h5>
         </div>
         <div id="weather" class="row pt-4">
             <!-- <div class="col">
                 <img src="img/cloudy.jpg" alt="image-placeholder" class="img" id="setImg">
             </div> -->
             <div class="col">
-                <ul>
-                    <li class="location text-center">
-                       <h1 id="getlocation"></h1>
-                    </li>
-                    <li class="main text-center">
-                       <h5 class="main-type" id="mainType"></h5></li>
-                       <h1 class="show-temp text-center" id="showTemp"></h1>
-                </ul>
+
+                <div class="row">
+                    <div class="col p-3">
+                        <ul>
+                                <li class="location text-center">
+                                    <h1 id="getlocation"></h1>
+                                </li>
+                                <li class="main text-center">
+                                    <h5 class="main-type" id="mainType"></h5></li>
+                                    <h1 class="show-temp text-center" id="showTemp"></h1>
+                        </ul>
+                    </div>
+                    <div class="col weather-icon">
+                        <span id="weatherIcon"></span>
+                    </div>
+                </div>
+
+                
                 <div class="desc text-center" id="shortNews"></div>
                 <div class="row" id="dataTable">
                 </div>

@@ -8,9 +8,17 @@ $(document).ready(function () {
   var dataTable = $('#dataTable');        // DATA TABLE WITH DETAILED INFO
   var content = $('#contentContainer');
   var loader = $("#loader");
+  var icons = [
+    {type: "Haze", icon: '<i class="fas fa-cloud-sun"></i>'},
+    {type: "Rain", icon: '<i class="fas fa-cloud-showers-heavy"></i>'},
+    {type: "Smoke", icon: '<i class="fas fa-smog"></i>'},
+    {type: 'Clouds', icon: '<i class="fas fa-cloud"></i>'},
+    {type: 'Clear', icon: '<i class="fas fa-sun"></i>'},
+    {type: 'Snow', icon: '<i class="far fa-snowflake"></i>'},
+    {type: 'Other', icon: '<i class="fas fa-wind"></i>'},
+  ];
 
   // TEMPORARILY HIDING HTML DATA
-
   function clearScreen() { 
     getlocation.html('');
     locationStatus.html('');
@@ -60,9 +68,30 @@ $(document).ready(function () {
       content.show();
 
       var weatherData = response.data; 
-
       getlocation.html(`${weatherData.name}`);
-      locationStatus.html(`${weatherData.weather[0].main}`);
+      var weatherType = weatherData.weather[0].main;
+
+      locationStatus.html(`${weatherType}`);
+
+        for (var i=0; i<icons.length; i++){
+
+          if(icons[i].type === weatherType){
+            break;
+          }
+          else if(icons[i].type !== weatherType && i==icons.length-1){
+            weatherType = "Other"
+          }
+
+        }
+
+        console.log(weatherType);
+        for(var i = 0; i<icons.length; i++){
+
+          if(icons[i].type === weatherType){
+            $('#weatherIcon').html(icons[i].icon); 
+          }
+        }
+
       showTemp.html(`${response.data.main.temp + String.fromCharCode(176) }C`);
       shortNews.html(`Today: ${weatherData.weather[0].main} currently. The low will be ${weatherData.main.temp_min + String.fromCharCode(176)}C and high will be ${weatherData.main.temp_max + String.fromCharCode(176)}C.`);
       dataTable.show();
@@ -96,8 +125,9 @@ $(document).ready(function () {
         console.log(error);
         content.show();
         loader.hide();
+        $('#weatherIcon').hide();
         $('#errorMessage').show();
-        $('#errorMessage').html("Sorry, location Not Found! <br><i class='icon ion- md-sad'></i></i>");
+        $('#errorMessage').html("Sorry, location Not Found! <br> <i class='far fa-frown-open'></i>");
       });
   }
 
