@@ -1,4 +1,9 @@
 $(document).ready(function() {
+  alert("========== WELCOME TO AVIRUP's WEATHER APP ==========");
+  alert(
+    "========== Read this First! ==========\n\n1) This is a simple weather app which will give you the general idea of the weather.\n\n2) Try searching for popular locations(e.g-> Mumbai, Tokyo, New York, Howrah, etc.)\n\n3) If you have any feedback contact AVIRUP \n\n4) And that's it :) GOOD LUCK!"
+  );
+
   var term;
   var getlocation = $("#getlocation"); // MAIN LOCATION
   var locationStatus = $("#mainType"); // WHETHER ITS HAZE, SMOKY, SUNNY .... ETC
