@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
   var term;
   var getlocation = $("#getlocation"); // MAIN LOCATION
   var locationStatus = $("#mainType"); // WHETHER ITS HAZE, SMOKY, SUNNY .... ETC
@@ -96,6 +95,8 @@ $(document).ready(function() {
         dataTable.html(`
       <div class="col text-center details">
         <ul id="detailTopics">
+            <li>Latitude</li>
+            <li>Longitude</li>
             <li>Pressure</li>
             <li>Humidity</li>
             <li>Min Temp</li>
@@ -105,6 +106,8 @@ $(document).ready(function() {
       </div>
       <div class="col text-center data">
         <ul id="detailData">
+            <li>${weatherData.coord.lat}</li>
+            <li>${weatherData.coord.lon}</li>
             <li>${weatherData.main.pressure} pa</li>
             <li>${weatherData.main.humidity}%</li>
             <li>${weatherData.main.temp_min + String.fromCharCode(176)}C</li>
