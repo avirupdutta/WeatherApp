@@ -1,13 +1,16 @@
 # JavaScript Weather App
 
-It mainly uses:-
-  - HTML
-  - CSS
-  - JAVASCRIPT
-  - JQUERY
-  - HTTP AXIOS CLIENT
-  - BOOTSWATCH (Bootstrap theme)
-  - IONICONS
+Made with:-
+
+-   HTML
+-   CSS
+-   JAVASCRIPT (JQuery, Axios, openweathermap api)
+-   BOOTSWATCH (Bootstrap theme)
+
 ---
-# Screenshot:- 
-![](Screenshots/ss1.png)
+
+# Screenshot:-
+
+![](Screenshots/image.png)
+
+![](Screenshots/demo.gif)
