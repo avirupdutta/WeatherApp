@@ -11,6 +11,6 @@ Made with:-
 
 # Screenshot:-
 
-![](Screenshots/image.png)
+![](Screenshots/image2.png)
 
 ![](Screenshots/demo.gif)
